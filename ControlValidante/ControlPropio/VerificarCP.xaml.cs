@@ -30,11 +30,6 @@ namespace ControlValidante.ControlPropio
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-           
-        }
-
 
         private void CajaText_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -50,7 +45,7 @@ namespace ControlValidante.ControlPropio
                         validar("0[1-9][0-9]{3}|[1-4][0-9]{4}|5[0-2][0-9]{3}");
                         break;
                     case "DNI":
-                        validar("/^[a-z]{3}[0-9]{6}[a-z]?$/i");
+                        validar("[0-9]{8}[A-Z]");
                         break;
                     case "tel":
                         validar("(\\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}");
@@ -69,12 +64,36 @@ namespace ControlValidante.ControlPropio
             m = Validacion.Match(CajaText.Text);
             if (m.Success)
             {
-                Etiqueta.Content = "Validacion exitosa";
+                Etiqueta.Content = "Validación exitosa";
             }
             else
             {
-                Etiqueta.Content = "Error de validacion";
+                Etiqueta.Content = "Error de validación";
             }
+        }
+
+        private void nombrar(string tipo)
+        {
+            switch (tipo)
+            {
+                case "CP":
+                    indicador.Content = "Validación de Código Postal";
+                    break;
+                case "DNI":
+                    indicador.Content = "Validación de DNI";
+                    break;
+                case "tel":
+                    indicador.Content = "Validación de Teléfono";
+                    break;
+                default:
+                    indicador.Content = "No hay validacion asociada";
+                    break;
+            }
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            nombrar(TipoVali);
         }
     }
 }

@@ -4,9 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ControlValidante.ControlPropio"
-             mc:Ignorable="d" Height="104" Width="457.333">
-    <Grid>
-        <Label x:Name="Etiqueta" Content="" HorizontalAlignment="Left" Margin="173,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="CajaText" HorizontalAlignment="Left" Height="23" Margin="35,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" LostFocus="CajaText_LostFocus"/>
+             mc:Ignorable="d" Height="104" Width="556.333">
+    <Grid Loaded="Grid_Loaded">
+        <Label x:Name="Etiqueta" Content="" HorizontalAlignment="Left" Margin="388,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.3,0.654"/>
+        <TextBox x:Name="CajaText" HorizontalAlignment="Left" Height="23" Margin="219,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" LostFocus="CajaText_LostFocus"/>
+        <Label x:Name="indicador" Content="Label" HorizontalAlignment="Left" Margin="21,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.342,-0.538"/>
     </Grid>
 </UserControl>
